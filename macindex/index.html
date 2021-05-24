@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mac</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="./js/index.js">
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="#">MAC中国区官网</a><span><a href="hy.html">语言切换</a>｜<a href="#">联系我们</a></span></li>
+			<li><img src="images/LOGO.png" alt=""></li>
+			<li><span><a href="./zhuce.html">注册</a>｜<a href="denglu.html">登录</a></span></li>
+		</ul>
+	</header>
+	<nav>
+         <a href="index.html">首页</a> ｜
+         <a href="cz.html">唇妆系列</a> ｜
+         <a href="yz.html">眼妆系列</a> ｜
+         <a href="ywd.html">尤雾弹</a> ｜
+         <a href="rm.html">热门产品</a> ｜
+         <a href="hy.html">会员中心</a>
+         <p><a href="#">当前位置：首页 〉唇妆</a></p>
+	</nav>
+	<div id="box" class="box">
+        <ul class="img-box" style="left:0px;">
+            <li><a href="javascript:;"></a><img src="./images/1.jpg" alt="1"></li>
+            <li><a href="javascript:;"></a><img src="./images/2.jpg" alt="2"></li>
+            <li><a href="javascript:;"></a><img src="./images/3.jpg" alt="3"></li>
+            <li><a href="javascript:;"></a><img src="./images/4.png" alt="4"></li>
+            <li><a href="javascript:;"></a><img src="./images/5.jpg" alt="5"></li>
+            <li><a href="javascript:;"></a><img src="./images/6.jpg" alt="6"></li>
+        </ul>
+        <ul class="dots">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <div class="arrows">
+            <a href="javascript:;" class="arrow-left">&lt;</a>
+            <a href="javascript:;" class="arrow-right">&gt;</a>
+        </div>
+	</div>
+	<div class="main1 bx">
+		<ul>
+			<li>
+                <a href="#"><img src="images/1_09.jpg" alt=""></a>
+                <p><a href="#">唇妆</a></p>
+			</li>
+			<li>
+                <a href="#"><img src="images/1_11.jpg" alt=""></a>
+                <p><a href="#">眼妆</a></p>
+			</li>
+			<li>
+                <a href="#"><img src="images/1_13.jpg" alt=""></a>
+                <p><a href="#">高光</a></p>
+			</li>
+		</ul>
+		<span> 〉</span>
+		<i> 〈</i>
+	</div>
+    <div class="main2">
+           <ul>
+           	<li><a href="#"><span></span>子弹头系列</a></li>
+           	<li><a href="#"><span></span>尤雾弹系列</a></li>
+           	<li><a href="#"><span></span>唇釉系列</a></li>
+           	<li><a href="#"><span></span>季节限定</a></li>
+           	<li><a href="#"><span></span>活动联名</a></li>
+           	<p>口红系列</p>
+           </ul>
+    </div>
+    <div class="main3">
+    	<div class="m3 bx">
+    	     <ul>
+    	     	<li><a href="#"><span></span>单个眼影</a></li>
+    	     	<li><a href="#"><span></span>眼影盘系列</a></li>
+    	     	<p>眼妆系列</p>
+    	     </ul>
+    	     <ul>
+    	     	<li><a href="#"><span></span>底妆系列</a></li>
+    	     	<li><a href="#"><span></span>修容高光系列</a></li>
+    	     	<p>底妆修容</p>
+    	     </ul>
+    	</div>
+    </div>
+    <div class="main1 bx">
+		<ul>
+			<li>
+                <a href="#"><img src="images/1_22.jpg" alt=""></a>
+                <p><a href="#">明星产品</a></p>
+			</li>
+			<li>
+                <a href="#"><img src="images/1_24.jpg" alt=""></a>
+                <p><a href="#">活动限定</a></p>
+			</li>
+			<li>
+                <a href="#"><img src="images/1_26.jpg" alt=""></a>
+                <p><a href="#">凑单专区</a></p>
+			</li>
+		</ul>
+	</div>
+	<div class="main4 bx">
+		<ul>
+			<li><a href="#">公司历史</a></li>
+			<li><a href="#">人才招聘</a></li>
+			<li><a href="#">线下门店</a></li>
+		</ul>
+	</div>
+	<footer>
+          <p>©1995-2020 Macromedia.Inc</p>
+          <p>All right reserved</p>
+	</footer>
+	<script>
+		
+var box = document.getElementById('box'); //舞台
+var imgBox=box.getElementsByClassName('img-box')[0];  //内容区域
+var dotBox=box.getElementsByClassName('dots')[0];   //按钮区域
+var dots=dotBox.getElementsByTagName('li'); //所有按钮
+var dotNum=dots.length;//按钮数量and图片数量
+var arrowBox=box.getElementsByClassName('arrows')[0];   //箭头
+var arrows = arrowBox.getElementsByTagName('a');//所有箭头
+var arrowLeft=arrows[0]; //左箭头
+var arrowRight = arrows[1];  //右箭头
+var imgWidth=590;   //图片宽度
+var index=0;
+var t=null;//定时器全局变量
+var speed = 1;//自动切换图片的时间间隔，以秒为单位
+
+function showImg(n){//n指定 为第几个图，n从0开始
+    //每个图片的宽度是590W
+    //显示第一个图，n=0，left=0
+    //显示第二个图，n=1，left=-590
+    //显示第二个图，n=2，left=-1180
+    //显示第三个图，n=3，left=-1770
+    imgBox.style.left=-imgWidth*n+'px';
+}
+function showBtn(m,n){//给指定的按钮添加特殊样式，n指定第几个按钮，n从0开始
+    // for(var i=0;i<dotNum;i++){  //全清
+    //     dots[i].className='';
+    // }
+    // dots[n].className='active'; //单设
+    dots[m].removeAttribute('class');
+    dots[n].className='active';
+}
+//设置完之后可以更改变得样式 但是得执行一次这行代码
+for(var i=0;i<dotNum;i++){
+    dots[i].idx=i; //当前索引
+    dots[i].onmouseover=function(){
+        var oldIndex=index;
+        index=this.idx;//当前索引赋值给index
+        showImg(index);
+        showBtn(oldIndex,index);
+    }
+}
+arrowLeft.onclick=function(){   //给左箭头绑定事件
+                                //会切换到上个图片
+                                //图片对应的按钮有特殊样式，其他按钮样式正常
+    var oldIndex=index;
+    index--;//索引值--
+    if(index<0){
+        index=dotNum-1;
+    }
+    showImg(index);
+    showBtn(oldIndex,index);
+}
+arrowRight.onclick=function(){  //给右箭头绑定事件
+    //会切换到下个图片
+    //图片对应的按钮有特殊样式，其他按钮样式正常
+    var oldIndex=index;
+    index++;
+    if(index>dotNum-1){
+        index=0;
+    }
+    showImg(index);
+    showBtn(oldIndex,index);
+}
+box.onmouseover=function(){ //鼠标滑过整体盒子的事件处理
+    //停止自动切换图片、清楚设置的定时器
+    clearInterval(t);
+}
+box.onmouseout=function(){  //鼠标离开整体盒子的事件处理
+    //开始自动切换图片，设置定时器，每个指定时间，自动切换到下一个图 / 自动点击一次右箭头
+    t=setInterval(function(){
+        arrowRight.onclick();
+    },speed*1000);
+}
+box.onmouseout();
+alert('MAC欢迎你')
+	</script>
+</body>
+</html>
